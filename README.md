@@ -4,28 +4,25 @@
 
 ### Install Dash
 
-1. Run `pip install dash`
+1. Run `pip install dash` or `pip3 install dash`
 
 [*Dash Docs for More Help*](https://dash.plotly.com/installation)
 
 Note: For HTML with dash use [**Dash HTML Components**](https://dash.plotly.com/dash-html-components)
 
-### Bootstrap Theme for Dash
+### Install Bootstrap Theme for Dash
 
-1. Run `pip install dash-bootstrap-components`
-2. Create `index.py`
-3. Add the following: 
+2. Run `pip install dash-bootstrap-components` or `pip3 install dash-bootstrap-components`
 
-```
-import dash
-import dash_bootstrap_components as dbc
+### Launch Sample Dash Bootstrap Theme 
+ 
+3. Change Directory to /Dash-Bootstrap-Theme
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-``` 
+4. Run `python index.py` or `python3 index.py`
 
+5. Join [Futurist Academy Discord Server](https://discord.gg/vyc5CrG) for help
 
-
-### Resources:
+## Resources:
 
 * [Dash-Plotly Website](https://plotly.com/dash/)
 * [Dash Bootstrap](https://dash-bootstrap-components.opensource.faculty.ai/)
