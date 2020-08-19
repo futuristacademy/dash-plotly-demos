@@ -18,9 +18,9 @@ navbar = dbc.NavbarSimple(
             label="More",
         ),
     ],
-    brand="",
+    brand="TigerGraph",
     brand_href="#",
-    color="white",
+    color="#ef6c00",
     dark=False,
 )
 

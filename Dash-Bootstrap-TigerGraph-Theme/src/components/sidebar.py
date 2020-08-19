@@ -7,18 +7,18 @@ from dash.dependencies import Input, Output, State
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
     "position": "fixed",
-    "top": 0,
+    "top": "89px",
     "left": 0,
     "bottom": 0,
     "width": "16rem",
     "padding": "2rem 1rem",
-    "background-color": "#f8f9fa",
+    "background-color": "white",
 }
 
 sidebar = html.Div(
     [
         # html.H2("Sidebar", className="display-4"),
-        html.H5("MyApp"),
+        html.H5("Dashboard"),
         html.Hr(),
         # html.P(
         #     "A simple sidebar layout with navigation links", className="lead"

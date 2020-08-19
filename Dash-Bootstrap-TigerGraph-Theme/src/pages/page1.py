@@ -12,7 +12,7 @@ page1 = html.Div(
                 dbc.Col(
                     html.Div(
                         "This is column 1",
-                        style={"height": "100px", "border-style": "solid"},
+                        style={"height": "200px", "border-style": "solid"},
                     ),
                     md=3,
                 ),
