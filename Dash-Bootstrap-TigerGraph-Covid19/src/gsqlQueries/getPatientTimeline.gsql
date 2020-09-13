@@ -1,0 +1,23 @@
+CREATE QUERY getPatientTimeline(VERTEX<Patient> p) FOR GRAPH MyGraph {
+  /* Get all dates for patient
+	Patient:
+	  Confirmed date
+		Released date
+		Deceased date
+		Symptom onset date
+
+	TravelEvent:
+	  Visited Date
+
+	example : 6100000100*/
+
+  Seed = {p};
+
+	results = SELECT t FROM Seed:s - (PATIENT_TRAVELED:e) - TravelEvent:t;
+
+	PRINT Seed[Seed.confirmed_date AS Confirmed,
+	Seed.symptom_onset_date AS Symptom,
+	Seed.deceased_date AS Deceased,
+	Seed.released_date AS Released],
+	results;
+}

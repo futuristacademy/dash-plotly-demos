@@ -1,0 +1,4 @@
+CREATE QUERY getAllTravel() FOR GRAPH MyGraph {
+  Seed = {TravelEvent.*};
+  PRINT Seed;
+}

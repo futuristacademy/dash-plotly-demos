@@ -1,0 +1,13 @@
+CREATE QUERY getGraph() FOR GRAPH MyGraph { 
+
+  ListAccum <EDGE> @@AllE;
+
+  AllV={ANY};
+
+  AllV = select a from AllV:a-(:e)-:t
+  ACCUM
+    STRING getType=e.type,
+    CASE WHEN getType NOT LIKE "reverse%" THEN @@AllE += e END;
+
+  PRINT AllV, @@AllE;
+}

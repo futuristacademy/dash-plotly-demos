@@ -1,0 +1,69 @@
+CREATE QUERY getPatientStats(VERTEX<Patient> p) FOR GRAPH MyGraph {
+  /*  Example id: 4100000006
+
+			Direct Infections:
+			0-2: 0.25,
+			3-5: 0.50,
+			6-9: 0.75,
+			10+: 1.00
+
+			Contact Number:
+			0-2: 0.25,
+			3-5: 0.50,
+			6-9: 0.75,
+			10+: 1.00
+
+			Travel Events:
+			0-2: 0.25,
+			3-5: 0.50,
+			6-9: 0.75,
+			10+: 1.00
+
+			Score: Sum / 3
+	*/
+	SumAccum<INT> @@travelEvents, @@contactNumber, @@directInfection;
+	SumAccum<FLOAT> @@covidScore;
+	Seed = {p};
+
+	S1 = SELECT t FROM Seed:s -(PATIENT_TRAVELED:e) - :t
+	             ACCUM IF t.outdegree("PATIENT_TRAVELED") > 1 THEN
+	                    @@travelEvents += 1,
+	                    @@contactNumber += t.outdegree("PATIENT_TRAVELED") - 1
+	                   ELSE
+	                    @@travelEvents += 1
+										END;
+
+	IF @@travelEvents <=2
+	  THEN @@covidScore += 0.25;
+	ELSE IF @@travelEvents <6 AND @@travelEvents >2
+	  THEN @@covidScore += 0.50;
+	ELSE IF @@travelEvents <10 AND @@travelEvents >5
+	  THEN @@covidScore += 0.75;
+	ELSE
+	   @@covidScore += 1.00;
+  END;
+
+	IF @@contactNumber <=2
+	  THEN @@covidScore += 0.25;
+	ELSE IF @@contactNumber <6 AND @@contactNumber >2
+	  THEN @@covidScore += 0.50;
+	ELSE IF @@contactNumber <10 AND @@contactNumber >5
+	  THEN @@covidScore += 0.75;
+	ELSE
+	   @@covidScore += 1.00;
+  END;
+
+  one_hop =  SELECT tgt FROM Seed:v -(reverse_INFECTED_BY:e)->:tgt
+	                      ACCUM @@directInfection += 1;
+	IF @@directInfection <=2
+	  THEN @@covidScore += 0.25;
+	ELSE IF @@directInfection <6 AND @@directInfection >2
+	  THEN @@covidScore += 0.50;
+	ELSE IF @@directInfection <10 AND @@directInfection >5
+	  THEN @@covidScore += 0.75;
+	ELSE
+	   @@covidScore += 1.00;
+  END;
+
+	PRINT @@travelEvents AS TRAVEL_COUNT, @@contactNumber AS CONTACT_COUNT, @@directInfection AS INFECTION_COUNT, @@covidScore/3 AS RISK_SCORE;
+}

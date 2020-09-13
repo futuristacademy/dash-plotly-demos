@@ -1,0 +1,9 @@
+CREATE QUERY getPatientInfo(VERTEX<Patient> p) FOR GRAPH MyGraph syntax V2{
+  /* Get all attributes in Patient Vertex
+	example : 6100000100 */
+  Seed = {p};
+
+	S1 = SELECT t FROM Seed:s - ((PATIENT_FROM_COUNTRY|PATIENT_FROM_PROVINCE|PATIENT_FROM_CITY):e) - :t;
+
+	PRINT Seed AS Patient, S1 AS Patient_Locations;
+}
