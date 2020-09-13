@@ -1,8 +1,3 @@
-# dash-plotly-demos
-The basic Layout :
-
-![basic_layout](static/basic.png)
-
 ## Getting Started
 Requirements are :
 
