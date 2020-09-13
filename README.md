@@ -6,18 +6,20 @@ The basic Layout :
 ## Getting Started
 Requirements are :
 
-** TigerGraph Server instance Installed  
-** Import  Covid Sample Solution  ( Youtube Demo to be prepared ) Located in  "Dash-Bootstrap-TigerGraph-Covid19\src\Data_Covid_TigerGraph_data"
-** Import  Covid Sample GSQL Queries  ( Youtube Demo to be prepared ) Located in  "Dash-Bootstrap-TigerGraph-Covid19\src\gsqlQueries"
-** Graphistry API Account ( see config-sample.py )
-
+* TigerGraph Server instance Installed.
+* Import  Covid Sample Solution  ( Youtube Demo to be prepared ) Located in  "Dash-Bootstrap-TigerGraph-Covid19\src\Data_Covid_TigerGraph_data".
+* Import  Covid Sample GSQL Queries  ( Youtube Demo to be prepared ) Located in "Dash-Bootstrap-TigerGraph-Covid19\src\gsqlQueries".
+* Graphistry API Account ( see config-sample.py ).
 
 ![basic_layout](static/tigergraph-studio.gif)
 
 
 **Setup Virtual ENV**
 
-Run `python3 -m virtualenv -p python3 .`
+```console
+$ python3 -m virtualenv -p python3 .
+
+```
 
 **Activate  VENV**
 
