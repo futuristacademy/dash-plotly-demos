@@ -21,11 +21,19 @@ Run `python3 -m virtualenv -p python3 .`
 
 **Activate  VENV**
 
-Run `source bin/activate`
+
+```console
+$ source bin/activate
+
+```
+
 
 **Install requirements VIA PyPi**
 
-Run `pip install -r requirements.txt`
+```console
+$ pip install -r requirements.txt
+
+```
 
 Note: For HTML with dash use [**Dash HTML Components**](https://dash.plotly.com/dash-html-components)
 
@@ -34,19 +42,25 @@ Note: For HTML with dash use [**Dash HTML Components**](https://dash.plotly.com/
  
 Change Directory to /Dash-Bootstrap-Theme
 
-Run `python index.py`
+```console
+$ python index.py
+
+```
 
 ### Launch Covid-19 Dash  
  
 Change Directory to /Dash-Bootstrap-TigerGraph-Covid19
 
-Run `python index.py`
+```console
+$ python index.py
+
+```
 
 ![basic_layout](static/Dash.gif)
 
 ## Get Help 
-Join [Tiger Graph Official Community](https://discord.gg/uSDZ5x) for help
-Join [Futurist Academy Discord Server](https://discord.gg/vyc5CrG) for help
+Join [Tiger Graph Official Community](https://discord.gg/uSDZ5x) and
+ [Futurist Academy Discord Server](https://discord.gg/vyc5CrG) for help
 
 
 ## Resources:
