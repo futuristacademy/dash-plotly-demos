@@ -8,7 +8,7 @@ import pandas as pd
 import urllib.request
 from pandas.tseries.offsets import *
 
-graphistry.register(api=3, protocol="https", server="hub.graphistry.com", username="jon.herke@tigergraph.com", password="2Bornot2B?")
+graphistry.register(api=3, protocol="https", server="hub.graphistry.com", username="", password="")
 
 url = "https://raw.githubusercontent.com/uber-web/kepler.gl-data/master/earthquakes/data.csv"
 download_file = urllib.request.urlretrieve(url, "data.csv")
